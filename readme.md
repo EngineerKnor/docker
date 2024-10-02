@@ -14,16 +14,16 @@ For more information about docker, see:
 #### #1 - Create the docker image:
 - This command needs to be executed within the folder of the 'dockerfile'.
 ```bash
-docker build -t mysql-database .
+docker build -t mysql-database-image .
 ```
 #### #2 - Run the docker container:
 - This command needs to be executed within the folder of the 'dockerfile'.
 ```bash
-docker run -p 4200:3306 -p 4210:3306  -d --name mysql-database mysql-database
+docker run -p 4200:3306 -p 4210:3306  -d --name mysql-database-container mysql-database-image
 ```
 #### #3 - Command to get in an running docker container:
 ```bash
-docker exec -it knorlex-bot /bin/bash
+docker exec -it mysql-database-container /bin/bash
 ```
 #### #4 - Command to delete all docker images that aren't attached to a docker container:
 ```bash
