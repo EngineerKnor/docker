@@ -28,7 +28,7 @@ RUN chown -R www-data:www-data /var/www/html/phpmyadmin
 RUN /etc/init.d/mysql stop 
 RUN usermod -d /var/lib/mysql/ mysql 
 
-#? Create the database based on the files from cs-db-setup
+#? Create the database
 RUN /etc/init.d/mysql start && \
     mysql -e "CREATE USER 'user'@'%' IDENTIFIED WITH 'mysql_native_password' BY 'password'" && \
     mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';" && \
