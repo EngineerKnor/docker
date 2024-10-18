@@ -48,4 +48,5 @@ EXPOSE 3306
 EXPOSE 80
 
 #? Start services
-CMD /etc/init.d/mysql start && apache2ctl -D FOREGROUND
+# CMD /etc/init.d/mysql start && apache2ctl -D FOREGROUND
+CMD ["sh", "-c", "/etc/init.d/mysql start ; apache2ctl -D FOREGROUND"]
